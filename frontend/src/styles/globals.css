@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: all;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Application colors */
+  --color-background: var(--color-base-100);
+  --color-surface: var(--color-base-200);
+  --color-surface-hover: var(--color-base-300);
+  --color-border: color-mix(in srgb, var(--color-base-content) 15%, transparent);
+
+  --color-text: var(--color-base-content);
+  --color-text-secondary: color-mix(in srgb, var(--color-base-content) 65%, transparent);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Home page */
+
+.home-page {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.home-header {
+  height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-logo,
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.home-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.home-content {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.home-content h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.home-content p {
+  color: var(--color-text-secondary);
+}

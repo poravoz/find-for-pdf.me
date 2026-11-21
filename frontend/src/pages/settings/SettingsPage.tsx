@@ -50,7 +50,11 @@ function LanguageSettings() {
           <p>{t.languageHint}</p>
         </div>
 
-        <Languages size={21} />
+        <Languages
+          size={21}
+          className="settings-icon settings-icon-accent"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="language-options">
@@ -204,7 +208,11 @@ function SettingsPage() {
                     }`}
                     onClick={() => setActiveTab(tab.id)}
                   >
-                    <Icon size={19} />
+                    <Icon
+                      size={19}
+                      className="settings-icon settings-nav-icon"
+                      aria-hidden="true"
+                    />
 
                     <span className="settings-nav-text">
                       <strong>{tab.label}</strong>

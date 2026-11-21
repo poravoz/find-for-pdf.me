@@ -6,6 +6,7 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  UserRound,
 } from 'lucide-react';
 
 import { useAuth } from '../../context/AuthContext';
@@ -18,13 +19,6 @@ function Navbar() {
   const t = TRANSLATIONS[language];
   const [profileOpen, setProfileOpen] = useState(false);
   const navigate = useNavigate();
-
-  const initials = user?.name
-    .split(' ')
-    .map((part) => part[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase();
 
   const handleLogout = async () => {
     try {
@@ -47,7 +41,7 @@ function Navbar() {
       <div className="settings-navbar-actions">
         {user ? (
           <div className="settings-profile-menu">
-           <button
+            <button
               type="button"
               className="settings-profile-button"
               onClick={() => setProfileOpen((current) => !current)}
@@ -57,7 +51,7 @@ function Navbar() {
                 {user.avatarUrl ? (
                   <img src={user.avatarUrl} alt="" />
                 ) : (
-                  <span>{initials}</span>
+                  <UserRound size={20} aria-hidden="true" />
                 )}
               </div>
 
@@ -65,8 +59,12 @@ function Navbar() {
                 {user.name}
               </span>
 
-              <ChevronDown size={16} className="profile-chevron" />
+              <ChevronDown
+                size={16}
+                className="profile-chevron"
+              />
             </button>
+
             {profileOpen && (
               <>
                 <button

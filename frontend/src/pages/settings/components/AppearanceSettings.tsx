@@ -29,7 +29,11 @@ function AppearanceSettings() {
           <p>{t.appearanceHint}</p>
         </div>
 
-        <Palette size={21} />
+        <Palette
+          size={21}
+          className="settings-icon settings-icon-accent"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="appearance-theme-grid">
@@ -46,7 +50,10 @@ function AppearanceSettings() {
               aria-pressed={isActive}
               aria-label={`${themeName}${isActive ? ` — ${t.selectedTheme}` : ''}`}
             >
-              <div className="appearance-theme-preview" data-theme={item}>
+              <div
+                className="appearance-theme-preview"
+                data-theme={item}
+              >
                 <div className="appearance-preview-header">
                   <span />
                   <span />
@@ -66,7 +73,14 @@ function AppearanceSettings() {
 
               <div className="appearance-theme-info">
                 <span>{themeName}</span>
-                {isActive && <Check size={17} />}
+
+                {isActive && (
+                  <Check
+                    size={17}
+                    className="settings-icon settings-icon-accent"
+                    aria-hidden="true"
+                  />
+                )}
               </div>
             </button>
           );

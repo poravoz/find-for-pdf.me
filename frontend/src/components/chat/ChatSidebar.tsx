@@ -11,6 +11,7 @@ import {
   Pencil,
   Trash2,
   PanelLeftClose,
+  UserRound,
 } from 'lucide-react';
 
 import type { ChatSidebarProps } from '../../types/chat.types';
@@ -185,13 +186,9 @@ function ChatSidebar({
       
       <div className="sidebar-footer">
         <div className="sidebar-user">
-          <div className="sidebar-avatar">
-            {user.avatarUrl ? (
-              <img src={user.avatarUrl} alt={user.name} />
-            ) : (
-              user.name.charAt(0).toUpperCase()
-            )}
-          </div>
+        <div className="sidebar-avatar">
+          <UserRound size={20} strokeWidth={1.8} />
+        </div>
 
           <div className="sidebar-user-info">
             <strong>{user.name}</strong>
